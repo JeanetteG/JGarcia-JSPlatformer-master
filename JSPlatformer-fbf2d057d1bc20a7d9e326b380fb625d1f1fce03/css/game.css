@@ -2,8 +2,11 @@
                  table-layout: fixed;
                  border-spacing: 0;   }
 .background td { padding: 0;          }
-.lava          { background: rgb(255, 100, 100); }
-.wall          { background: white;   }
+.lava          { background-image: url("https://lh4.ggpht.com/hjKTMCuaGujM2JrNQk9Hh_dHMOI2rwCsI6AFN5HnyvKret_SZW_vtdB5_wUx0Q5n=w300");
+				 background-size: 20px 20px;}
+.wall          { background-image: url("http://thief.washboardabs.net/textures/terrain/images/caverock.jpg"); 
+				 background-size: 20px 20px;}
+				 
 
 .actor  { position: absolute;  }
 .coin   { background: rgb(241, 229, 89); }

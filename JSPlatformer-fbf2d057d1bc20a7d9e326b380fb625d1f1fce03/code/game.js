@@ -2,6 +2,7 @@
 var actorChars = {
   "@": Player,
   "o": Coin, // A coin will wobble up and down
+  "y": Spike,
   "=": Lava, "|": Lava, "v": Lava  
 };
 
@@ -38,6 +39,8 @@ function Level(plan) {
       // Because there is a third case (space ' '), use an "else if" instead of "else"
       else if (ch == "!")
         fieldType = "lava";
+	 else if (ch == "y")
+		  fieldType = "spike";
 
       // "Push" the fieldType, which is a string, onto the gridLine array (at the end).
       gridLine.push(fieldType);
@@ -381,7 +384,9 @@ Level.prototype.playerTouched = function(type, actor) {
       this.status = "won";
       this.finishDelay = 1;
     }
-  }
+  }else if (type == "spike" && this.status == null) {
+    this.status = "lost";
+    this.finishDelay = 1;
 };
 
 // Arrow key codes for readibility
